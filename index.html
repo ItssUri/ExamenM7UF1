@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        #PENDENTS button {
+            color: red;
+        }
+        #FETES button {
+            color:green;
+        }
+
+        section {
+            margin-bottom: 30px;
+            margin-top: 30px;
+            background: rgb(241, 241, 241);
+            min-height: 300px;
+            padding: 20px;
+            border-radius: 6px;
+            width: 70vh;
+            text-align: center;
+            
+        }
+
+        section h1 {
+            margin-bottom: 30px;
+        }
+
+        body {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        * {
+            font-family: "Figtree", sans-serif;
+            font-optical-sizing: auto;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 20px;
+            font-size: larger;
+        }
+
+        #FETES {
+            background: rgb(221, 240, 191);
+            box-shadow: 10px 10px 5px 0px rgba(48, 112, 5, 0.356);
+        }
+
+        #PENDENTS {
+            background: rgb(252, 213, 213);
+            box-shadow: 10px 10px 5px 0px rgba(112, 5, 5, 0.356);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function changeStatus(tascaN) {
+        const pendentsDiv = document.getElementById('PENDENTS')
+        const fetesDiv = document.getElementById('FETES')
+        const tasca = document.getElementById(tascaN)
+        if (tasca.parentElement.id==="FETES") {
+            pendentsDiv.appendChild(tasca)
+        } else {
+            fetesDiv.appendChild(tasca)
+        }
+
+        console.log(tasca.parentElement.id)
+        }
+    </script>
+    <div id="table">
+        <section id="PENDENTS">
+            <h1>Tasques Pendents:</h1>
+            <div id="tasca1"><button onclick="changeStatus('tasca1')">- Entregar M7UF1 Pràctica 5</button></div>
+            <div id="tasca2"><button onclick="changeStatus('tasca2')">- Codificar el PHP de M6</button></div>
+            <div id="tasca3"><button onclick="changeStatus('tasca3')">- Llegir la documentació de Figma</button></div>
+        </section>
+        <hr>
+        <section id="FETES">
+            <h1>Tasques Fetes:</h1>
+        </section>
+    </div>
+</body>
+</html>
